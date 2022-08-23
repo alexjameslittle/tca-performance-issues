@@ -11,6 +11,8 @@
 		8D6C2EB828B53C3F0053AFF8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6C2EB728B53C3F0053AFF8 /* ContentView.swift */; };
 		8D6C2EBA28B53C410053AFF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6C2EB928B53C410053AFF8 /* Assets.xcassets */; };
 		8D6C2EBD28B53C410053AFF8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D6C2EBC28B53C410053AFF8 /* Preview Assets.xcassets */; };
+		8D83BF6728B572960014DC05 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 8D83BF6628B572960014DC05 /* ComposableArchitecture */; };
+		8D83BF6928B572C60014DC05 /* TCA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D83BF6828B572C60014DC05 /* TCA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		8D6C2EB728B53C3F0053AFF8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8D6C2EB928B53C410053AFF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D6C2EBC28B53C410053AFF8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8D83BF6828B572C60014DC05 /* TCA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D83BF6728B572960014DC05 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +41,7 @@
 			children = (
 				8D6C2EB428B53C3F0053AFF8 /* testing-images */,
 				8D6C2EB328B53C3F0053AFF8 /* Products */,
+				8D83BF6028B557D50014DC05 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				8D6C2EB528B53C3F0053AFF8 /* testing_imagesApp.swift */,
+				8D83BF6828B572C60014DC05 /* TCA.swift */,
 				8D6C2EB728B53C3F0053AFF8 /* ContentView.swift */,
 				8D6C2EB928B53C410053AFF8 /* Assets.xcassets */,
 				8D6C2EBB28B53C410053AFF8 /* Preview Content */,
@@ -65,6 +71,13 @@
 				8D6C2EBC28B53C410053AFF8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8D83BF6028B557D50014DC05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +96,9 @@
 			dependencies = (
 			);
 			name = "testing-images";
+			packageProductDependencies = (
+				8D83BF6628B572960014DC05 /* ComposableArchitecture */,
+			);
 			productName = "testing-images";
 			productReference = 8D6C2EB228B53C3F0053AFF8 /* testing-images.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +127,9 @@
 				Base,
 			);
 			mainGroup = 8D6C2EA928B53C3F0053AFF8;
+			packageReferences = (
+				8D83BF6528B572960014DC05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = 8D6C2EB328B53C3F0053AFF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -137,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D83BF6928B572C60014DC05 /* TCA.swift in Sources */,
 				8D6C2EB828B53C3F0053AFF8 /* ContentView.swift in Sources */,
 				8D6C2EB628B53C3F0053AFF8 /* testing_imagesApp.swift in Sources */,
 			);
@@ -339,6 +359,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8D83BF6528B572960014DC05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8D83BF6628B572960014DC05 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8D83BF6528B572960014DC05 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8D6C2EAA28B53C3F0053AFF8 /* Project object */;
 }

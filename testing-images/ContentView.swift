@@ -6,16 +6,37 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct ContentView: View {
+struct ChildView: View {
+    let store: Store<ChildState, ChildAction>
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            WithViewStore(store.scope(state: \.color)) { viewStore in
+                Color(uiColor: viewStore.state)
+                    .frame(width: 10, height: 10)
+            }
+        }
+        .onAppear {
+            let viewStore = ViewStore(store)
+            viewStore.send(.onAppear)
+        }
+        .onDisappear {
+            let viewStore = ViewStore(store)
+            viewStore.send(.onDisappear)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+struct ContentView: View {
+    let store: Store<StateSeven, ActionSeven>
+    
+    var body: some View {
+        List {
+            ForEachStore(store.scope(state: \.children, action: ActionSeven.child)) { childStore in
+                ChildView(store: childStore)
+            }
+        }
     }
 }
